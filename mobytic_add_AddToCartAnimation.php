@@ -157,8 +157,8 @@ class Mobytic_add_AddToCartAnimation extends Module
 
         $this->context->smarty->assign('module_dir', $this->_path);
 
-        $output = $this->context->smarty->fetch($this->local_path . 'views/templates/admin/configure.tpl');
-
+        // $output = $this->context->smarty->fetch($this->local_path . 'views/templates/admin/configure.tpl');
+        $output = '';
         return $output . $this->renderForm();
     }
 
@@ -198,26 +198,25 @@ class Mobytic_add_AddToCartAnimation extends Module
         return array(
             'form' => array(
                 'legend' => array(
-                    'title' => $this->l('Settings'),
+                    'title' => $this->l('Paramètres'),
                     'icon' => 'icon-cogs',
                 ),
                 'input' => array(
                     array(
                         'type' => 'switch',
-                        'label' => $this->l('Live mode'),
+                        'label' => $this->l('Activer'),
                         'name' => 'MOBYTIC_ADD_ADDTOCARTANIMATION_LIVE_MODE',
                         'is_bool' => true,
-                        'desc' => $this->l('Use this module in live mode'),
                         'values' => array(
                             array(
                                 'id' => 'active_on',
                                 'value' => true,
-                                'label' => $this->l('Enabled')
+                                'label' => $this->l('Oui')
                             ),
                             array(
                                 'id' => 'active_off',
                                 'value' => false,
-                                'label' => $this->l('Disabled')
+                                'label' => $this->l('Non')
                             )
                         ),
                     ),
